@@ -48,7 +48,9 @@ submit.addEventListener("submit", async e => {
                 message: 'You don`t put value',
                 position: "topRight",
             });
-        hiddenLoader();
+
+            hiddenLoader();
+            
            return  form.innerHTML = "";
         } else {
 
@@ -58,7 +60,9 @@ submit.addEventListener("submit", async e => {
                 message: 'Not correct data',
                 position: "topLeft",
             });
-        hiddenLoader();
+               
+               hiddenLoader();
+               
             return  form.innerHTML = "";
            } 
         } 
@@ -71,8 +75,6 @@ submit.addEventListener("submit", async e => {
     showLoadMore();
     checkBtnStatus();
     hiddenLoader();
-
-
 
     e.target.reset();
 });
@@ -88,6 +90,7 @@ async function onLoadMoreClick() {
     } catch (error) {
         console.log(err);
     }
+    
     hiddenLoader();
     showLoadMore();
     checkBtnStatus();
