@@ -3,7 +3,7 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 
 import { getImages } from "./pixabay-api";
 import simpleLightbox from "simplelightbox";
-const link = document.querySelector(".image-large");
+
 const form = document.querySelector(".list-width-item");
 
 
@@ -44,8 +44,7 @@ export function createImg({ largeImageURL, likes, views, downloads, comments, we
 
 
 export function imagesTemplate({ hits }) {
-    form.innerHTML = ""
-    const markup =hits.map(createImg).join("");
+    const markup = hits.map(createImg).join("");
     form.insertAdjacentHTML("beforeend", markup);
     const gallery = new simpleLightbox('.list-width-item .image-large');
     gallery.refresh();
